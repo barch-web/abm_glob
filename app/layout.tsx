@@ -71,7 +71,7 @@ const jsonLd = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${poppins.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased bg-white text-[#0A192F]" suppressHydrationWarning>
+      <body className="font-sans antialiased bg-[#FAF8F3] text-[#1F1A14]" suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

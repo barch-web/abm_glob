@@ -90,8 +90,8 @@ export function GalleryManagerTab() {
   return (
     <div className="space-y-8">
       {/* Category Management */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
-        <h2 className="text-base font-bold text-[#0A192F]">
+      <div className="bg-white border border-[#E2DAC8] rounded-xl p-6 space-y-4">
+        <h2 className="text-base font-bold text-[#1F1A14]">
           Gallery Service Categories
         </h2>
         <form onSubmit={handleAddCategory} className="flex flex-wrap gap-3">
@@ -100,11 +100,11 @@ export function GalleryManagerTab() {
             value={newCategory}
             onChange={(e) => setNewCategory(e.target.value)}
             placeholder="New category name (e.g. Cloud & Backup Rollouts)"
-            className="flex-1 min-w-[240px] px-3.5 py-2 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="flex-1 min-w-[240px] px-3.5 py-2 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           <button
             type="submit"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0A192F] hover:bg-[#112240] text-white text-xs font-semibold transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#231D15] hover:bg-[#3A3022] text-[#FAF8F3] text-xs font-semibold transition-colors"
           >
             <Plus className="w-4 h-4" aria-hidden="true" />
             <span>Add Category</span>
@@ -115,14 +115,14 @@ export function GalleryManagerTab() {
           {state.galleryCategories.map((cat) => (
             <div
               key={cat}
-              className="inline-flex items-center gap-2 bg-[#F4F6F9] border border-slate-200 rounded-lg px-3 py-1.5 text-xs font-medium text-[#0A192F]"
+              className="inline-flex items-center gap-2 bg-[#FAF8F3] border border-[#E2DAC8] rounded-lg px-3 py-1.5 text-xs font-medium text-[#1F1A14]"
             >
               <span>{cat}</span>
               <button
                 type="button"
                 onClick={() => deleteGalleryCategory(cat)}
                 aria-label={`Remove category ${cat}`}
-                className="text-slate-400 hover:text-red-600 transition-colors"
+                className="text-[#8C7E6D] hover:text-red-600 transition-colors"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
@@ -134,17 +134,17 @@ export function GalleryManagerTab() {
       {/* Add / Edit Project Form */}
       <form
         onSubmit={handleSaveItem}
-        className="bg-white border border-slate-200 rounded-xl p-6 space-y-5"
+        className="bg-white border border-[#E2DAC8] rounded-xl p-6 space-y-5"
       >
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-base font-bold text-[#0A192F]">
+          <h2 className="text-base font-bold text-[#1F1A14]">
             {editingId ? 'Edit Gallery Project' : 'Add Photo / Project to Gallery'}
           </h2>
           {editingId && (
             <button
               type="button"
               onClick={resetForm}
-              className="text-xs font-semibold text-slate-600 hover:text-[#0A192F]"
+              className="text-xs font-semibold text-[#574E42] hover:text-[#1F1A14]"
             >
               Cancel Edit
             </button>
@@ -153,7 +153,7 @@ export function GalleryManagerTab() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1.5">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1.5">
               Project Title *
             </label>
             <input
@@ -161,18 +161,18 @@ export function GalleryManagerTab() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="e.g. 24-Port Office Cabling & Wi-Fi Mesh"
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1.5">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1.5">
               Category *
             </label>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
             >
               {state.galleryCategories.map((cat) => (
                 <option key={cat} value={cat}>
@@ -183,7 +183,7 @@ export function GalleryManagerTab() {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1.5">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1.5">
               Location
             </label>
             <input
@@ -191,12 +191,12 @@ export function GalleryManagerTab() {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               placeholder="e.g. Osu, Accra"
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1.5">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1.5">
               Completed Date
             </label>
             <input
@@ -204,12 +204,12 @@ export function GalleryManagerTab() {
               value={completedDate}
               onChange={(e) => setCompletedDate(e.target.value)}
               placeholder="e.g. November 2026"
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
             />
           </div>
 
           <div className="md:col-span-2">
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1.5">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1.5">
               Image URL or File Upload (Stored Safely as Base64 in IndexedDB) *
             </label>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -218,9 +218,9 @@ export function GalleryManagerTab() {
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 placeholder="/images/service-networking.jpg or paste image URL"
-                className="flex-1 px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+                className="flex-1 px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
               />
-              <label className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-slate-300 hover:border-[#0A192F] bg-white text-xs font-semibold text-[#0A192F] cursor-pointer whitespace-nowrap">
+              <label className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-[#D5CBB4] hover:border-[#B45309] bg-white text-xs font-semibold text-[#1F1A14] cursor-pointer whitespace-nowrap">
                 <Upload className="w-4 h-4" aria-hidden="true" />
                 <span>Upload Photo</span>
                 <input
@@ -235,8 +235,8 @@ export function GalleryManagerTab() {
 
           {imageUrl && (
             <div className="md:col-span-2">
-              <p className="text-xs font-medium text-slate-500 mb-1.5">Preview</p>
-              <div className="w-48 aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
+              <p className="text-xs font-medium text-[#6B5F51] mb-1.5">Preview</p>
+              <div className="w-48 aspect-[4/3] rounded-lg overflow-hidden border border-[#E2DAC8] bg-[#FAF8F3]">
                 <SafeImage
                   src={imageUrl}
                   alt={title || 'Preview'}
@@ -247,7 +247,7 @@ export function GalleryManagerTab() {
           )}
 
           <div className="md:col-span-2">
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1.5">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1.5">
               Project Description
             </label>
             <textarea
@@ -255,18 +255,18 @@ export function GalleryManagerTab() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Summarize equipment deployed, cabling standards, or training outcomes..."
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
             />
           </div>
         </div>
 
         {feedback && (
-          <p className="text-xs font-semibold text-[#047857]">{feedback}</p>
+          <p className="text-xs font-semibold text-[#92400E]">{feedback}</p>
         )}
 
         <button
           type="submit"
-          className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#0A192F] font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors"
+          className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#1F1A14] font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors"
         >
           <Plus className="w-4 h-4" aria-hidden="true" />
           <span>{editingId ? 'Save Project Changes' : 'Publish to Gallery'}</span>
@@ -278,10 +278,10 @@ export function GalleryManagerTab() {
         {state.gallery.map((item) => (
           <div
             key={item.id}
-            className="bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between"
+            className="bg-white border border-[#E2DAC8] rounded-xl overflow-hidden flex flex-col justify-between"
           >
             <div>
-              <div className="aspect-[4/3] bg-slate-100">
+              <div className="aspect-[4/3] bg-[#EFE8D8]">
                 <SafeImage
                   src={item.imageUrl}
                   alt={item.title}
@@ -290,26 +290,26 @@ export function GalleryManagerTab() {
                 />
               </div>
               <div className="p-4 space-y-1.5">
-                <p className="text-xs font-semibold text-[#D97706] truncate">
+                <p className="text-xs font-semibold text-[#92400E] truncate">
                   {item.category}
                 </p>
-                <h3 className="text-sm font-bold text-[#0A192F] leading-snug">
+                <h3 className="text-sm font-bold text-[#1F1A14] leading-snug">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-600 line-clamp-2">
+                <p className="text-xs text-[#574E42] line-clamp-2">
                   {item.description}
                 </p>
               </div>
             </div>
 
-            <div className="px-4 py-3 border-t border-slate-100 flex items-center justify-between gap-2">
-              <span className="text-xs text-slate-500 truncate">{item.location}</span>
+            <div className="px-4 py-3 border-t border-[#F0EAE0] flex items-center justify-between gap-2">
+              <span className="text-xs text-[#6B5F51] truncate">{item.location}</span>
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   type="button"
                   onClick={() => handleEdit(item)}
                   aria-label={`Edit ${item.title}`}
-                  className="p-1.5 rounded-lg border border-slate-200 text-slate-600 hover:text-[#0A192F]"
+                  className="p-1.5 rounded-lg border border-[#E2DAC8] text-[#574E42] hover:text-[#1F1A14]"
                 >
                   <Pencil className="w-3.5 h-3.5" />
                 </button>
@@ -317,7 +317,7 @@ export function GalleryManagerTab() {
                   type="button"
                   onClick={() => deleteGalleryItem(item.id)}
                   aria-label={`Delete ${item.title}`}
-                  className="p-1.5 rounded-lg border border-slate-200 text-slate-600 hover:text-red-600"
+                  className="p-1.5 rounded-lg border border-[#E2DAC8] text-[#574E42] hover:text-red-600"
                 >
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>

@@ -38,12 +38,12 @@ export default function AdminDashboardPage() {
   return (
     <AdminAuthGate>
       {(lockAdmin) => (
-        <div className="min-h-screen bg-[#F4F6F9] flex flex-col lg:flex-row">
+        <div className="min-h-screen bg-[#FAF8F3] flex flex-col lg:flex-row">
           {/* Sidebar Navigation */}
-          <aside className="w-full lg:w-64 bg-[#0A192F] text-white shrink-0 flex flex-col justify-between">
+          <aside className="w-full lg:w-64 bg-[#231D15] text-[#FAF8F3] shrink-0 flex flex-col justify-between">
             <div className="p-5 space-y-6">
               <div>
-                <p className="text-xs font-semibold text-[#F59E0B]">
+                <p className="text-xs font-semibold text-[#FBBF24]">
                   CMS Workspace
                 </p>
                 <p className="text-lg font-bold tracking-tight mt-0.5">
@@ -62,8 +62,8 @@ export default function AdminDashboardPage() {
                       onClick={() => setActiveTab(tab.id)}
                       className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-sm font-medium transition-colors text-left ${
                         active
-                          ? 'bg-[#F59E0B] text-[#0A192F] font-semibold'
-                          : 'text-slate-300 hover:bg-white/10 hover:text-white'
+                          ? 'bg-[#F59E0B] text-[#1F1A14] font-semibold'
+                          : 'text-[#D8D0C2] hover:bg-white/10 hover:text-white'
                       }`}
                     >
                       <Icon className="w-4 h-4 shrink-0" aria-hidden="true" />
@@ -77,7 +77,7 @@ export default function AdminDashboardPage() {
             <div className="p-5 border-t border-white/10 space-y-2">
               <Link
                 href="/"
-                className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-semibold text-slate-200 hover:bg-white/10 transition-colors"
+                className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-semibold text-[#D8D0C2] hover:bg-white/10 hover:text-white transition-colors"
               >
                 <span>View Public Website</span>
                 <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
@@ -85,7 +85,7 @@ export default function AdminDashboardPage() {
               <button
                 type="button"
                 onClick={lockAdmin}
-                className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-colors"
+                className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-semibold text-[#D8D0C2] hover:bg-white/10 hover:text-white transition-colors"
               >
                 <span>Lock Admin Session</span>
                 <LogOut className="w-3.5 h-3.5" aria-hidden="true" />
@@ -95,17 +95,17 @@ export default function AdminDashboardPage() {
 
           {/* Main Workspace */}
           <div className="flex-1 flex flex-col min-w-0">
-            <header className="bg-white border-b border-slate-200 px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+            <header className="bg-white border-b border-[#E2DAC8] px-6 py-4 flex flex-wrap items-center justify-between gap-4">
               <div>
-                <p className="text-xs text-slate-500">
-                  Admin Portal / <span className="text-[#0A192F] font-semibold">{activeLabel}</span>
+                <p className="text-xs text-[#6B5F51]">
+                  Admin Portal / <span className="text-[#1F1A14] font-semibold">{activeLabel}</span>
                 </p>
-                <h1 className="text-xl font-bold text-[#0A192F] mt-0.5">
+                <h1 className="text-xl font-bold text-[#1F1A14] mt-0.5">
                   {activeLabel}
                 </h1>
               </div>
 
-              <div className="text-xs text-slate-500 tabular-nums">
+              <div className="text-xs text-[#6B5F51] tabular-nums">
                 Last saved: {new Date(state.updatedAt).toLocaleString()}
               </div>
             </header>

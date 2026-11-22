@@ -101,6 +101,11 @@ export function CMSProvider({ children }: { children: React.ReactNode }) {
         ...prev,
         enquiries: [entry, ...prev.enquiries],
       }));
+      fetch('/api/cms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'insert_enquiry', enquiry: entry }),
+      }).catch(() => {});
       return entry;
     },
     [persist]
@@ -121,6 +126,11 @@ export function CMSProvider({ children }: { children: React.ReactNode }) {
         ...prev,
         bookings: [entry, ...prev.bookings],
       }));
+      fetch('/api/cms', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'insert_booking', booking: entry }),
+      }).catch(() => {});
       return entry;
     },
     [persist]

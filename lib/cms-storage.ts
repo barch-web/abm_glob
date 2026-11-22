@@ -66,24 +66,51 @@ export async function loadCMSState(): Promise<CMSState> {
     return DEFAULT_CMS_STATE;
   }
 
-  let saved: CMSState | null = await readFromIndexedDB();
+  let localSaved: CMSState | null = await readFromIndexedDB();
 
-  if (!saved) {
+  if (!localSaved) {
     try {
       const raw = window.localStorage.getItem(LOCAL_STORAGE_KEY);
       if (raw) {
-        saved = JSON.parse(raw) as CMSState;
+        localSaved = JSON.parse(raw) as CMSState;
       }
     } catch {
-      saved = null;
+      localSaved = null;
     }
   }
 
-  if (saved && saved.content && Array.isArray(saved.services)) {
-    return saved;
+  // Attempt Supabase hydration via server proxy when configured
+  try {
+    const res = await fetch('/api/cms', { cache: 'no-store' });
+    if (res.ok) {
+      const json = (await res.json()) as {
+        configured?: boolean;
+        adminConfigured?: boolean;
+        state?: Partial<CMSState> | null;
+      };
+      if (json.configured && json.state && json.state.content) {
+        const base = localSaved || DEFAULT_CMS_STATE;
+        const initialHash =
+          base.adminPasswordHash || (await getInitialAdminPasswordHash());
+        const merged: CMSState = {
+          ...base,
+          ...json.state,
+          enquiries: json.state.enquiries ?? base.enquiries,
+          bookings: json.state.bookings ?? base.bookings,
+          adminPasswordHash: json.state.adminPasswordHash || initialHash,
+        };
+        await writeToIndexedDB(merged);
+        return merged;
+      }
+    }
+  } catch {
+    // Fall back silently to local IndexedDB / LocalStorage
   }
 
-  // Initialize default state with live SHA-256 hash of initial password
+  if (localSaved && localSaved.content && Array.isArray(localSaved.services)) {
+    return localSaved;
+  }
+
   const initialHash = await getInitialAdminPasswordHash();
   const initialized: CMSState = {
     ...DEFAULT_CMS_STATE,
@@ -106,6 +133,17 @@ export async function saveCMSState(state: CMSState): Promise<void> {
     window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));
   } catch {
     // LocalStorage may hit quota when large Base64 images are uploaded; IndexedDB remains authoritative.
+  }
+
+  // Background sync to Supabase if configured
+  try {
+    await fetch('/api/cms', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'sync_state', state: payload }),
+    });
+  } catch {
+    // Offline or Supabase not yet configured
   }
 }
 

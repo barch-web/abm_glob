@@ -52,12 +52,12 @@ export function WhatsAppWidget() {
         <div
           role="dialog"
           aria-label="WhatsApp Topic Selector"
-          className="w-80 max-w-[calc(100vw-2.5rem)] bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden"
+          className="w-80 max-w-[calc(100vw-2.5rem)] bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl shadow-xl overflow-hidden"
         >
-          <div className="bg-[#0A192F] text-white px-4 py-3.5 flex items-center justify-between gap-3">
+          <div className="bg-[#231D15] text-[#FAF8F3] px-4 py-3.5 flex items-center justify-between gap-3">
             <div>
               <p className="text-sm font-semibold">Chat on WhatsApp</p>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-[#FBBF24]">
                 Select a topic to message {state.content.phoneDisplay}
               </p>
             </div>
@@ -65,13 +65,13 @@ export function WhatsAppWidget() {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close WhatsApp menu"
-              className="p-1.5 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+              className="p-1.5 rounded-lg text-[#D8D0C2] hover:text-white hover:bg-white/10 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          <div className="p-2 divide-y divide-slate-100">
+          <div className="p-2 divide-y divide-[#E2DAC8]/70">
             {WHATSAPP_TOPICS.map((topic) => (
               <a
                 key={topic.label}
@@ -79,10 +79,10 @@ export function WhatsAppWidget() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-[#0A192F] hover:bg-[#F4F6F9] transition-colors"
+                className="flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-[#1F1A14] hover:bg-[#F3EFE6] transition-colors"
               >
                 <span>{topic.label}</span>
-                <ChevronRight className="w-4 h-4 text-[#059669] shrink-0" aria-hidden="true" />
+                <ChevronRight className="w-4 h-4 text-[#B45309] shrink-0" aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -94,9 +94,9 @@ export function WhatsAppWidget() {
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         aria-label="Open WhatsApp support topics"
-        className="inline-flex items-center gap-2.5 bg-[#059669] hover:bg-[#047857] text-white font-semibold text-sm px-4 py-3 rounded-full shadow-lg transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A192F] whitespace-nowrap"
+        className="inline-flex items-center gap-2.5 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-sm px-4 py-3 rounded-full shadow-lg border border-[#FBBF24]/50 transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F1A14] whitespace-nowrap"
       >
-        <MessageCircle className="w-5 h-5 shrink-0" aria-hidden="true" />
+        <MessageCircle className="w-5 h-5 shrink-0 text-[#FDE68A]" aria-hidden="true" />
         <span className="hidden sm:inline">WhatsApp Support</span>
       </button>
     </div>

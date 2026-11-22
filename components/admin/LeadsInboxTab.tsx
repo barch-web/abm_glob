@@ -20,12 +20,12 @@ const STATUS_OPTIONS: ('All' | LeadStatus)[] = [
 
 function statusStyle(status: LeadStatus) {
   if (status === 'Resolved') {
-    return 'text-[#047857] bg-[#ECFDF5] border-[#A7F3D0]';
+    return 'text-[#166534] bg-[#DCFCE7] border-[#86EFAC]';
   }
   if (status === 'Contacted') {
-    return 'text-[#B45309] bg-[#FFFBEB] border-[#FDE68A]';
+    return 'text-[#92400E] bg-[#FEF3C7] border-[#FCD34D]';
   }
-  return 'text-[#0A192F] bg-slate-100 border-slate-300';
+  return 'text-[#1F1A14] bg-[#F3EFE6] border-[#E2DAC8]';
 }
 
 export function LeadsInboxTab() {
@@ -77,42 +77,42 @@ export function LeadsInboxTab() {
     <div className="space-y-6">
       {/* Summary Strip */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white border border-slate-200 rounded-xl p-5">
-          <p className="text-xs font-medium text-slate-500">Total Enquiries</p>
-          <p className="text-2xl font-bold text-[#0A192F] mt-1 tabular-nums">
+        <div className="bg-white border border-[#E2DAC8] rounded-xl p-5">
+          <p className="text-xs font-medium text-[#6B5F51]">Total Enquiries</p>
+          <p className="text-2xl font-bold text-[#1F1A14] mt-1 tabular-nums">
             {state.enquiries.length}
           </p>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-5">
-          <p className="text-xs font-medium text-slate-500">Pending Enquiries</p>
-          <p className="text-2xl font-bold text-[#D97706] mt-1 tabular-nums">
+        <div className="bg-white border border-[#E2DAC8] rounded-xl p-5">
+          <p className="text-xs font-medium text-[#6B5F51]">Pending Enquiries</p>
+          <p className="text-2xl font-bold text-[#B45309] mt-1 tabular-nums">
             {state.enquiries.filter((e) => e.status === 'Pending').length}
           </p>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-5">
-          <p className="text-xs font-medium text-slate-500">Consultation Bookings</p>
-          <p className="text-2xl font-bold text-[#0A192F] mt-1 tabular-nums">
+        <div className="bg-white border border-[#E2DAC8] rounded-xl p-5">
+          <p className="text-xs font-medium text-[#6B5F51]">Consultation Bookings</p>
+          <p className="text-2xl font-bold text-[#1F1A14] mt-1 tabular-nums">
             {state.bookings.length}
           </p>
         </div>
-        <div className="bg-white border border-slate-200 rounded-xl p-5">
-          <p className="text-xs font-medium text-slate-500">Pending Consultations</p>
-          <p className="text-2xl font-bold text-[#D97706] mt-1 tabular-nums">
+        <div className="bg-white border border-[#E2DAC8] rounded-xl p-5">
+          <p className="text-xs font-medium text-[#6B5F51]">Pending Consultations</p>
+          <p className="text-2xl font-bold text-[#92400E] mt-1 tabular-nums">
             {state.bookings.filter((b) => b.status === 'Pending').length}
           </p>
         </div>
       </div>
 
       {/* Controls */}
-      <div className="bg-white border border-slate-200 rounded-xl p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="bg-white border border-[#E2DAC8] rounded-xl p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={() => setView('enquiries')}
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap ${
               view === 'enquiries'
-                ? 'bg-[#0A192F] text-white'
-                : 'bg-[#F4F6F9] text-slate-700 hover:text-[#0A192F]'
+                ? 'bg-[#F59E0B] text-[#1F1A14]'
+                : 'bg-[#FAF8F3] text-[#1F1A14] hover:bg-[#F3EFE6]'
             }`}
           >
             <Inbox className="w-4 h-4" aria-hidden="true" />
@@ -123,8 +123,8 @@ export function LeadsInboxTab() {
             onClick={() => setView('bookings')}
             className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-colors whitespace-nowrap ${
               view === 'bookings'
-                ? 'bg-[#0A192F] text-white'
-                : 'bg-[#F4F6F9] text-slate-700 hover:text-[#0A192F]'
+                ? 'bg-[#F59E0B] text-[#1F1A14]'
+                : 'bg-[#FAF8F3] text-[#1F1A14] hover:bg-[#F3EFE6]'
             }`}
           >
             <CalendarCheck className="w-4 h-4" aria-hidden="true" />
@@ -135,7 +135,7 @@ export function LeadsInboxTab() {
         <div className="flex flex-wrap items-center gap-3">
           <div className="relative flex-1 sm:w-64">
             <Search
-              className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"
+              className="w-4 h-4 text-[#8C7E6D] absolute left-3 top-1/2 -translate-y-1/2"
               aria-hidden="true"
             />
             <input
@@ -144,11 +144,11 @@ export function LeadsInboxTab() {
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search name, ref ID, phone..."
               aria-label="Search leads and bookings"
-              className="w-full pl-9 pr-3 py-2 rounded-lg border border-slate-200 bg-[#F4F6F9] text-xs text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+              className="w-full pl-9 pr-3 py-2 rounded-lg border border-[#D5CBB4] bg-[#FAF8F3] text-xs text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
             />
           </div>
 
-          <div className="flex items-center gap-1 bg-[#F4F6F9] p-1 rounded-lg border border-slate-200">
+          <div className="flex items-center gap-1 bg-[#FAF8F3] p-1 rounded-lg border border-[#E2DAC8]">
             {STATUS_OPTIONS.map((st) => (
               <button
                 key={st}
@@ -156,8 +156,8 @@ export function LeadsInboxTab() {
                 onClick={() => setStatusFilter(st)}
                 className={`px-2.5 py-1 rounded-md text-xs font-semibold transition-colors ${
                   statusFilter === st
-                    ? 'bg-white text-[#0A192F] shadow-sm'
-                    : 'text-slate-600 hover:text-[#0A192F]'
+                    ? 'bg-white text-[#1F1A14] shadow-sm'
+                    : 'text-[#574E42] hover:text-[#1F1A14]'
                 }`}
               >
                 {st}
@@ -171,7 +171,7 @@ export function LeadsInboxTab() {
       {view === 'enquiries' && (
         <div className="space-y-4">
           {filteredEnquiries.length === 0 ? (
-            <div className="bg-white border border-slate-200 rounded-xl p-10 text-center text-sm text-slate-500">
+            <div className="bg-white border border-[#E2DAC8] rounded-xl p-10 text-center text-sm text-[#6B5F51]">
               No business enquiries match your current filter.
             </div>
           ) : (
@@ -185,12 +185,12 @@ export function LeadsInboxTab() {
               return (
                 <div
                   key={enq.id}
-                  className="bg-white border border-slate-200 rounded-xl p-6 space-y-4"
+                  className="bg-white border border-[#E2DAC8] rounded-xl p-6 space-y-4"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EAE0] pb-4">
                     <div>
-                      <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                        <span className="font-mono-tabular font-semibold text-[#0A192F]">
+                      <div className="flex flex-wrap items-center gap-2 text-xs text-[#6B5F51]">
+                        <span className="font-mono-tabular font-semibold text-[#1F1A14]">
                           {enq.referenceId}
                         </span>
                         <span aria-hidden="true">·</span>
@@ -200,10 +200,10 @@ export function LeadsInboxTab() {
                         <span aria-hidden="true">·</span>
                         <span>{enq.location}</span>
                       </div>
-                      <h3 className="text-lg font-bold text-[#0A192F] mt-1">
+                      <h3 className="text-lg font-bold text-[#1F1A14] mt-1">
                         {enq.name}
                       </h3>
-                      <p className="text-xs font-semibold text-[#D97706] mt-0.5">
+                      <p className="text-xs font-semibold text-[#92400E] mt-0.5">
                         {enq.serviceName}
                       </p>
                     </div>
@@ -230,7 +230,7 @@ export function LeadsInboxTab() {
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white text-xs font-semibold transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#B45309] hover:bg-[#92400E] text-white text-xs font-semibold transition-colors"
                       >
                         <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>Reply</span>
@@ -240,7 +240,7 @@ export function LeadsInboxTab() {
                         type="button"
                         onClick={() => deleteEnquiry(enq.id)}
                         aria-label={`Delete enquiry ${enq.referenceId}`}
-                        className="p-2 rounded-lg border border-slate-200 text-slate-500 hover:text-red-600 hover:border-red-200 transition-colors"
+                        className="p-2 rounded-lg border border-[#E2DAC8] text-[#6B5F51] hover:text-red-600 hover:border-red-200 transition-colors"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -249,33 +249,33 @@ export function LeadsInboxTab() {
 
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                     <div>
-                      <p className="text-slate-500">Contact Phone</p>
-                      <p className="font-semibold text-[#0A192F] tabular-nums mt-0.5">
+                      <p className="text-[#6B5F51]">Contact Phone</p>
+                      <p className="font-semibold text-[#1F1A14] tabular-nums mt-0.5">
                         {enq.phone}
                       </p>
                     </div>
                     <div>
-                      <p className="text-slate-500">Email Address</p>
-                      <p className="font-semibold text-[#0A192F] break-all mt-0.5">
+                      <p className="text-[#6B5F51]">Email Address</p>
+                      <p className="font-semibold text-[#1F1A14] break-all mt-0.5">
                         {enq.email}
                       </p>
                     </div>
                     <div>
-                      <p className="text-slate-500">Expected Timeline</p>
-                      <p className="font-semibold text-[#0A192F] tabular-nums mt-0.5">
+                      <p className="text-[#6B5F51]">Expected Timeline</p>
+                      <p className="font-semibold text-[#1F1A14] tabular-nums mt-0.5">
                         {enq.expectedStartDate} → {enq.expectedEndDate}
                       </p>
                     </div>
                   </div>
 
-                  <div className="bg-[#F4F6F9] rounded-lg p-4 text-sm text-slate-700 space-y-2">
+                  <div className="bg-[#FAF8F3] rounded-lg p-4 text-sm text-[#3D352B] space-y-2 border border-[#E2DAC8]">
                     <p>
-                      <span className="font-semibold text-[#0A192F]">Scope Details: </span>
+                      <span className="font-semibold text-[#1F1A14]">Scope Details: </span>
                       {enq.specificDetails}
                     </p>
                     {enq.additionalMessage && (
-                      <p className="text-xs text-slate-600">
-                        <span className="font-semibold text-[#0A192F]">Additional Note: </span>
+                      <p className="text-xs text-[#574E42]">
+                        <span className="font-semibold text-[#1F1A14]">Additional Note: </span>
                         {enq.additionalMessage}
                       </p>
                     )}
@@ -291,7 +291,7 @@ export function LeadsInboxTab() {
       {view === 'bookings' && (
         <div className="space-y-4">
           {filteredBookings.length === 0 ? (
-            <div className="bg-white border border-slate-200 rounded-xl p-10 text-center text-sm text-slate-500">
+            <div className="bg-white border border-[#E2DAC8] rounded-xl p-10 text-center text-sm text-[#6B5F51]">
               No consultation bookings match your current filter.
             </div>
           ) : (
@@ -305,12 +305,12 @@ export function LeadsInboxTab() {
               return (
                 <div
                   key={bk.id}
-                  className="bg-white border border-slate-200 rounded-xl p-6 space-y-4"
+                  className="bg-white border border-[#E2DAC8] rounded-xl p-6 space-y-4"
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#F0EAE0] pb-4">
                     <div>
-                      <div className="flex flex-wrap items-center gap-2 text-xs text-slate-500">
-                        <span className="font-mono-tabular font-semibold text-[#0A192F]">
+                      <div className="flex flex-wrap items-center gap-2 text-xs text-[#6B5F51]">
+                        <span className="font-mono-tabular font-semibold text-[#1F1A14]">
                           {bk.referenceId}
                         </span>
                         <span aria-hidden="true">·</span>
@@ -322,7 +322,7 @@ export function LeadsInboxTab() {
                           {bk.visitorCount} {bk.visitorCount === 1 ? 'visitor' : 'visitors'}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-[#0A192F] mt-1">
+                      <h3 className="text-lg font-bold text-[#1F1A14] mt-1">
                         {bk.fullName}
                       </h3>
                     </div>
@@ -349,7 +349,7 @@ export function LeadsInboxTab() {
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-white text-xs font-semibold transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#B45309] hover:bg-[#92400E] text-white text-xs font-semibold transition-colors"
                       >
                         <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>WhatsApp</span>
@@ -359,7 +359,7 @@ export function LeadsInboxTab() {
                         type="button"
                         onClick={() => deleteBooking(bk.id)}
                         aria-label={`Delete booking ${bk.referenceId}`}
-                        className="p-2 rounded-lg border border-slate-200 text-slate-500 hover:text-red-600 hover:border-red-200 transition-colors"
+                        className="p-2 rounded-lg border border-[#E2DAC8] text-[#6B5F51] hover:text-red-600 hover:border-red-200 transition-colors"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -368,21 +368,21 @@ export function LeadsInboxTab() {
 
                   <div className="flex flex-wrap items-center gap-6 text-xs">
                     <div>
-                      <span className="text-slate-500">Phone: </span>
-                      <span className="font-semibold text-[#0A192F] tabular-nums">
+                      <span className="text-[#6B5F51]">Phone: </span>
+                      <span className="font-semibold text-[#1F1A14] tabular-nums">
                         {bk.phone}
                       </span>
                     </div>
                     <div>
-                      <span className="text-slate-500">Logged: </span>
-                      <span className="font-medium text-[#0A192F] tabular-nums">
+                      <span className="text-[#6B5F51]">Logged: </span>
+                      <span className="font-medium text-[#1F1A14] tabular-nums">
                         {new Date(bk.createdAt).toLocaleString()}
                       </span>
                     </div>
                   </div>
 
-                  <div className="bg-[#F4F6F9] rounded-lg p-4 text-sm text-slate-700">
-                    <span className="font-semibold text-[#0A192F]">Purpose: </span>
+                  <div className="bg-[#FAF8F3] rounded-lg p-4 text-sm text-[#3D352B] border border-[#E2DAC8]">
+                    <span className="font-semibold text-[#1F1A14]">Purpose: </span>
                     {bk.purpose}
                   </div>
                 </div>

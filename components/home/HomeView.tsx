@@ -56,8 +56,8 @@ export function HomeView() {
 
   return (
     <div>
-      {/* 1. HERO SECTION */}
-      <section className="bg-[#0A192F] text-white">
+      {/* 1. HERO SECTION (Milky Primary Surface + Gold Secondary CTAs) */}
+      <section className="bg-[#F3EFE6] text-[#1F1A14] border-b border-[#E2DAC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
             <motion.div
@@ -66,22 +66,22 @@ export function HomeView() {
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-6 flex flex-col justify-center space-y-6"
             >
-              <p className="text-xs sm:text-sm font-semibold tracking-wide text-[#F59E0B]">
+              <p className="text-xs sm:text-sm font-semibold tracking-wide text-[#92400E]">
                 {content.heroEyebrow}
               </p>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-bold leading-[1.15] tracking-tight text-white">
+              <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-bold leading-[1.15] tracking-tight text-[#1F1A14]">
                 {content.heroHeadline}
               </h1>
 
-              <p className="text-base sm:text-[17px] leading-relaxed text-slate-300 max-w-xl">
+              <p className="text-base sm:text-[17px] leading-relaxed text-[#574E42] max-w-xl">
                 {content.heroSubheadline}
               </p>
 
               <div className="flex flex-wrap items-center gap-3.5 pt-2">
                 <Link
                   href="/enquire"
-                  className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#0A192F] font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#1F1A14] font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
                 >
                   <span>Request a Quote</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -89,28 +89,28 @@ export function HomeView() {
 
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center gap-2 border border-white/60 hover:border-white hover:bg-white/10 text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-white border border-[#231D15]/30 hover:border-[#B45309] hover:bg-[#FAF8F3] text-[#1F1A14] font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
                 >
-                  <CalendarCheck className="w-4 h-4" aria-hidden="true" />
+                  <CalendarCheck className="w-4 h-4 text-[#B45309]" aria-hidden="true" />
                   <span>Book Consultation</span>
                 </Link>
 
                 <a
                   href={`tel:${content.phoneTel}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-slate-200 hover:text-[#F59E0B] px-3 py-3 transition-colors whitespace-nowrap tabular-nums"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#1F1A14] hover:text-[#92400E] px-3 py-3 transition-colors whitespace-nowrap tabular-nums"
                 >
-                  <Phone className="w-4 h-4 text-[#F59E0B]" aria-hidden="true" />
+                  <Phone className="w-4 h-4 text-[#B45309]" aria-hidden="true" />
                   <span>Call {content.phoneDisplay}</span>
                 </a>
               </div>
 
-              <div className="pt-4 border-t border-white/10 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-300">
+              <div className="pt-4 border-t border-[#E2DAC8] flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium text-[#574E42]">
                 <span>Individuals & Students</span>
-                <span aria-hidden="true" className="text-slate-600">·</span>
+                <span aria-hidden="true" className="text-[#D97706]">·</span>
                 <span>IT Educators</span>
-                <span aria-hidden="true" className="text-slate-600">·</span>
+                <span aria-hidden="true" className="text-[#D97706]">·</span>
                 <span>Corporate Organizations</span>
-                <span aria-hidden="true" className="text-slate-600">·</span>
+                <span aria-hidden="true" className="text-[#D97706]">·</span>
                 <span>Accra & Nationwide Delivery</span>
               </div>
             </motion.div>
@@ -121,18 +121,18 @@ export function HomeView() {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-6 flex"
             >
-              <div className="relative w-full min-h-[280px] lg:min-h-[420px] rounded-xl overflow-hidden border border-white/15 bg-[#112240]">
+              <div className="relative w-full min-h-[280px] lg:min-h-[420px] rounded-xl overflow-hidden border border-[#E2DAC8] bg-[#231D15]">
                 <SafeImage
                   src={content.heroImageUrl}
                   alt="ABM Global Ltd practical IT training and enterprise engineering workshop in Accra"
                   className="w-full h-full object-cover"
                   fallbackTitle="ABM Global Ltd Accra Engineering Lab"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0A192F]/90 via-[#0A192F]/45 to-transparent p-6">
-                  <p className="text-xs font-semibold text-[#F59E0B]">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#231D15]/95 via-[#231D15]/60 to-transparent p-6">
+                  <p className="text-xs font-semibold text-[#FBBF24]">
                     Practical Excellence · Safety-First Engineering
                   </p>
-                  <p className="text-sm text-white/95 mt-1">
+                  <p className="text-sm text-[#FAF8F3] mt-1">
                     {content.tagline}
                   </p>
                 </div>
@@ -143,13 +143,13 @@ export function HomeView() {
       </section>
 
       {/* 2. PROBLEM / SOLUTION VALUE GRID */}
-      <section className="bg-[#F4F6F9] border-b border-slate-200 py-16">
+      <section className="bg-[#FAF8F3] border-b border-[#E2DAC8] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-10">
-            <p className="text-xs font-semibold tracking-wide text-[#D97706] mb-2">
+            <p className="text-xs font-semibold tracking-wide text-[#92400E] mb-2">
               Why Organizations & Learners Choose ABM Global Ltd
             </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0A192F] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1F1A14] tracking-tight">
               Solving Real IT Reliability Challenges Across Ghana
             </h2>
           </div>
@@ -158,16 +158,16 @@ export function HomeView() {
             {VALUE_PILLARS.map((item) => (
               <div
                 key={item.code}
-                className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between"
+                className="bg-white border border-[#E2DAC8] rounded-xl p-6 flex flex-col justify-between"
               >
                 <div>
-                  <p className="text-xs font-semibold text-slate-500 tabular-nums mb-2">
+                  <p className="text-xs font-semibold text-[#B45309] tabular-nums mb-2">
                     {item.code} · {item.problem}
                   </p>
-                  <h3 className="text-base font-semibold text-[#0A192F] mb-2.5">
+                  <h3 className="text-base font-semibold text-[#1F1A14] mb-2.5">
                     {item.solution}
                   </h3>
-                  <p className="text-sm leading-relaxed text-slate-600">
+                  <p className="text-sm leading-relaxed text-[#574E42]">
                     {item.detail}
                   </p>
                 </div>
@@ -182,19 +182,19 @@ export function HomeView() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold tracking-wide text-[#D97706] mb-2">
+              <p className="text-xs font-semibold tracking-wide text-[#92400E] mb-2">
                 Six Core Engineering & Training Pillars
               </p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0A192F] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1F1A14] tracking-tight">
                 Comprehensive IT Services Tailored to Your Goals
               </h2>
             </div>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A192F] hover:text-[#D97706] transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#1F1A14] hover:text-[#B45309] transition-colors whitespace-nowrap"
             >
               <span>Explore Detailed Service Specifications</span>
-              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              <ArrowRight className="w-4 h-4 text-[#B45309]" aria-hidden="true" />
             </Link>
           </div>
 
@@ -206,10 +206,10 @@ export function HomeView() {
               return (
                 <article
                   key={service.id}
-                  className="bg-[#F4F6F9] border border-slate-200 rounded-xl overflow-hidden flex flex-col justify-between transition-transform duration-200 hover:-translate-y-0.5"
+                  className="bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl overflow-hidden flex flex-col justify-between transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   <div>
-                    <div className="aspect-[4/3] w-full overflow-hidden bg-slate-200">
+                    <div className="aspect-[4/3] w-full overflow-hidden bg-[#EFE8D8]">
                       <SafeImage
                         src={service.imageUrl}
                         alt={service.title}
@@ -219,21 +219,21 @@ export function HomeView() {
                     </div>
 
                     <div className="p-6">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-2 tabular-nums">
+                      <div className="flex items-center gap-2 text-xs font-semibold text-[#92400E] mb-2 tabular-nums">
                         <span>{service.code}.</span>
                         <span aria-hidden="true">·</span>
                         <span>{service.outcomeMetric}</span>
                       </div>
 
-                      <h3 className="text-lg font-semibold text-[#0A192F] leading-snug mb-2.5">
+                      <h3 className="text-lg font-semibold text-[#1F1A14] leading-snug mb-2.5">
                         {service.title}
                       </h3>
 
-                      <p className="text-sm leading-relaxed text-slate-600 mb-4">
+                      <p className="text-sm leading-relaxed text-[#574E42] mb-4">
                         {service.summary}
                       </p>
 
-                      <p className="text-xs text-slate-500">
+                      <p className="text-xs text-[#6B5F51]">
                         For: {service.audiences.join(' · ')}
                       </p>
                     </div>
@@ -242,7 +242,7 @@ export function HomeView() {
                   <div className="px-6 pb-6 pt-2 flex items-center gap-3">
                     <Link
                       href={`/enquire?service=${encodeURIComponent(service.title)}`}
-                      className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#F59E0B] hover:bg-[#D97706] text-[#0A192F] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors whitespace-nowrap"
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#F59E0B] hover:bg-[#D97706] text-[#1F1A14] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors whitespace-nowrap"
                     >
                       <span>Enquire</span>
                       <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -252,7 +252,7 @@ export function HomeView() {
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 bg-[#059669] hover:bg-[#047857] text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors whitespace-nowrap"
+                      className="inline-flex items-center justify-center gap-1.5 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors whitespace-nowrap"
                     >
                       <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                       <span>WhatsApp</span>
@@ -265,21 +265,21 @@ export function HomeView() {
         </div>
       </section>
 
-      {/* 4. FEATURED GALLERY PREVIEW */}
-      <section className="bg-[#0A192F] text-white py-16 lg:py-20">
+      {/* 4. FEATURED GALLERY PREVIEW (Warm Espresso Contrast Band) */}
+      <section className="bg-[#231D15] text-[#FAF8F3] py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold tracking-wide text-[#F59E0B] mb-2">
+              <p className="text-xs font-semibold tracking-wide text-[#FBBF24] mb-2">
                 Verified Field Deployments
               </p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#FAF8F3] tracking-tight">
                 Recent Works & Projects Across Accra
               </h2>
             </div>
             <Link
               href="/gallery"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#F59E0B] hover:text-white transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#FBBF24] hover:text-white transition-colors whitespace-nowrap"
             >
               <span>View Full Project Gallery</span>
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -291,9 +291,9 @@ export function HomeView() {
               <Link
                 key={project.id}
                 href="/gallery"
-                className="group bg-[#112240] border border-white/10 rounded-xl overflow-hidden flex flex-col"
+                className="group bg-[#2F271C] border border-[#3E3426] rounded-xl overflow-hidden flex flex-col"
               >
-                <div className="aspect-[4/3] overflow-hidden bg-slate-900">
+                <div className="aspect-[4/3] overflow-hidden bg-[#1A150F]">
                   <SafeImage
                     src={project.imageUrl}
                     alt={project.title}
@@ -303,13 +303,13 @@ export function HomeView() {
                 </div>
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <p className="text-xs text-[#F59E0B] font-medium mb-1.5">
+                    <p className="text-xs text-[#FBBF24] font-medium mb-1.5">
                       {project.location} · {project.completedDate}
                     </p>
-                    <h3 className="text-base font-semibold text-white leading-snug mb-2 group-hover:text-[#F59E0B] transition-colors">
+                    <h3 className="text-base font-semibold text-[#FAF8F3] leading-snug mb-2 group-hover:text-[#FBBF24] transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-slate-300 line-clamp-2">
+                    <p className="text-sm text-[#D8D0C2] line-clamp-2">
                       {project.description}
                     </p>
                   </div>
@@ -321,23 +321,23 @@ export function HomeView() {
       </section>
 
       {/* 5. ANNOUNCEMENTS & EVENTS PREVIEW + CONVERSION BANNER */}
-      <section className="bg-[#F4F6F9] py-16 lg:py-20">
+      <section className="bg-[#FAF8F3] py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs font-semibold tracking-wide text-[#D97706] mb-2">
+              <p className="text-xs font-semibold tracking-wide text-[#92400E] mb-2">
                 Training Calendar & Announcements
               </p>
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0A192F] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1F1A14] tracking-tight">
                 Upcoming Cohorts, Seminars & Updates
               </h2>
             </div>
             <Link
               href="/updates"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#0A192F] hover:text-[#D97706] transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#1F1A14] hover:text-[#B45309] transition-colors whitespace-nowrap"
             >
               <span>All Updates & Events</span>
-              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              <ArrowRight className="w-4 h-4 text-[#B45309]" aria-hidden="true" />
             </Link>
           </div>
 
@@ -345,24 +345,24 @@ export function HomeView() {
             {featuredAnnouncements.map((item) => (
               <article
                 key={item.id}
-                className="bg-white border border-slate-200 rounded-xl p-6 flex flex-col justify-between"
+                className="bg-white border border-[#E2DAC8] rounded-xl p-6 flex flex-col justify-between"
               >
                 <div>
-                  <p className="text-xs font-semibold text-slate-500 mb-2">
+                  <p className="text-xs font-semibold text-[#B45309] mb-2">
                     {item.type} · {item.date}
                   </p>
-                  <h3 className="text-base font-semibold text-[#0A192F] mb-2 leading-snug">
+                  <h3 className="text-base font-semibold text-[#1F1A14] mb-2 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  <p className="text-sm text-[#574E42] leading-relaxed mb-4">
                     {item.summary}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-3">
-                  <span className="text-xs text-slate-500 truncate">{item.location}</span>
+                <div className="pt-3 border-t border-[#F0EAE0] flex items-center justify-between gap-3">
+                  <span className="text-xs text-[#6B5F51] truncate">{item.location}</span>
                   <Link
                     href={item.ctaHref || '/updates'}
-                    className="text-xs font-semibold text-[#D97706] hover:text-[#0A192F] transition-colors whitespace-nowrap shrink-0"
+                    className="text-xs font-semibold text-[#92400E] hover:text-[#1F1A14] transition-colors whitespace-nowrap shrink-0"
                   >
                     {item.ctaLabel || 'Read Details'} →
                   </Link>
@@ -372,9 +372,9 @@ export function HomeView() {
           </div>
 
           {/* Direct Conversion Strip */}
-          <div className="bg-[#0A192F] text-white rounded-xl p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+          <div className="bg-[#231D15] text-[#FAF8F3] rounded-xl p-8 sm:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 border border-[#3E3426]">
             <div className="max-w-2xl space-y-2.5">
-              <div className="flex items-center gap-4 text-xs font-semibold text-[#F59E0B]">
+              <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-[#FBBF24]">
                 <span className="inline-flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4" aria-hidden="true" />
                   <span>Safety-First Engineering</span>
@@ -391,22 +391,22 @@ export function HomeView() {
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
                 Ready to Train Your Team or Upgrade Your Infrastructure?
               </h2>
-              <p className="text-sm sm:text-base text-slate-300">
-                Submit an instant quote request with instant WhatsApp routing, or schedule an office consultation in Accra.
+              <p className="text-sm sm:text-base text-[#D8D0C2]">
+                Submit an instant quote request with WhatsApp routing, or schedule an office consultation in Accra.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <Link
                 href="/enquire"
-                className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#0A192F] font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#1F1A14] font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
               >
                 <span>Request a Quote</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </Link>
               <Link
                 href="/book-consultation"
-                className="inline-flex items-center gap-2 border border-white/40 hover:border-white hover:bg-white/10 text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-2 border border-white/40 hover:border-[#FBBF24] hover:bg-white/10 text-[#FAF8F3] font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
               >
                 <span>Book Consultation</span>
               </Link>

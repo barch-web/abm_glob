@@ -34,16 +34,16 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Page Header */}
-      <section className="bg-[#0A192F] text-white py-14 lg:py-18 border-b border-white/10">
+      <section className="bg-[#F3EFE6] text-[#1F1A14] py-14 lg:py-18 border-b border-[#E2DAC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
-            <p className="text-xs sm:text-sm font-semibold text-[#F59E0B]">
+            <p className="text-xs sm:text-sm font-semibold text-[#92400E]">
               About {content.companyName} · Accra, Ghana
             </p>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-[#1F1A14]">
               Engineering-Led IT Support, Built on Integrity and After-Sales Accountability
             </h1>
-            <p className="text-base text-slate-300 leading-relaxed">
+            <p className="text-base text-[#574E42] leading-relaxed">
               {content.tagline}
             </p>
           </div>
@@ -55,26 +55,26 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
             <div className="lg:col-span-6 flex flex-col justify-center space-y-5">
-              <h2 className="text-2xl sm:text-3xl font-bold text-[#0A192F] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1F1A14] tracking-tight">
                 Who We Are
               </h2>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <p className="text-base text-[#3D352B] leading-relaxed">
                 {content.aboutOverview}
               </p>
-              <p className="text-base text-slate-600 leading-relaxed">
+              <p className="text-base text-[#574E42] leading-relaxed">
                 Whether guiding a first-time computer user through workplace essentials, auditing a multi-branch corporate server room, or procuring authenticated laptops for a school, our focus remains constant: clarity, reliability, and measurable skill transfer.
               </p>
               <div className="pt-2 flex flex-wrap gap-3">
                 <Link
                   href="/services"
-                  className="inline-flex items-center gap-2 bg-[#0A192F] hover:bg-[#112240] text-white font-semibold text-sm px-5 py-3 rounded-lg transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-sm px-5 py-3 rounded-lg transition-colors whitespace-nowrap"
                 >
                   <span>Explore Our 6 Services</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
                 <Link
                   href="/book-consultation"
-                  className="inline-flex items-center gap-2 border border-slate-300 hover:border-[#0A192F] text-[#0A192F] font-semibold text-sm px-5 py-3 rounded-lg transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#1F1A14] font-semibold text-sm px-5 py-3 rounded-lg transition-colors whitespace-nowrap"
                 >
                   <span>Visit Our Accra Office</span>
                 </Link>
@@ -82,7 +82,7 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <div className="h-full min-h-[280px] rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+              <div className="h-full min-h-[280px] rounded-xl overflow-hidden border border-[#E2DAC8] bg-[#F3EFE6]">
                 <SafeImage
                   src="/images/service-auditing.jpg"
                   alt="ABM Global Ltd IT consultant conducting infrastructure verification"
@@ -96,31 +96,31 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision (Live Editable via Admin) */}
-      <section className="bg-[#F4F6F9] border-y border-slate-200 py-16">
+      <section className="bg-[#FAF8F3] border-y border-[#E2DAC8] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white border border-slate-200 rounded-xl p-8 space-y-4">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#D97706]">
-                <Target className="w-4 h-4" aria-hidden="true" />
+            <div className="bg-white border border-[#E2DAC8] rounded-xl p-8 space-y-4">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#92400E]">
+                <Target className="w-4 h-4 text-[#B45309]" aria-hidden="true" />
                 <span>Our Mission</span>
               </div>
-              <h3 className="text-xl font-bold text-[#0A192F]">
+              <h3 className="text-xl font-bold text-[#1F1A14]">
                 Practical Reliability for Every Client
               </h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <p className="text-base text-[#3D352B] leading-relaxed">
                 {content.missionStatement}
               </p>
             </div>
 
-            <div className="bg-white border border-slate-200 rounded-xl p-8 space-y-4">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#D97706]">
-                <Compass className="w-4 h-4" aria-hidden="true" />
+            <div className="bg-white border border-[#E2DAC8] rounded-xl p-8 space-y-4">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-[#B45309]">
+                <Compass className="w-4 h-4 text-[#D97706]" aria-hidden="true" />
                 <span>Our Vision</span>
               </div>
-              <h3 className="text-xl font-bold text-[#0A192F]">
+              <h3 className="text-xl font-bold text-[#1F1A14]">
                 West Africa’s Trusted IT Standard
               </h3>
-              <p className="text-base text-slate-700 leading-relaxed">
+              <p className="text-base text-[#3D352B] leading-relaxed">
                 {content.visionStatement}
               </p>
             </div>
@@ -132,13 +132,13 @@ export default function AboutPage() {
       <section className="py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12 space-y-3">
-            <p className="text-xs font-semibold text-[#D97706]">
+            <p className="text-xs font-semibold text-[#92400E]">
               Our Operating Philosophy
             </p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#0A192F] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1F1A14] tracking-tight">
               {content.philosophyHeading}
             </h2>
-            <p className="text-base text-slate-600 leading-relaxed">
+            <p className="text-base text-[#574E42] leading-relaxed">
               {content.philosophyBody}
             </p>
           </div>
@@ -149,13 +149,13 @@ export default function AboutPage() {
               return (
                 <div
                   key={val.title}
-                  className="bg-[#F4F6F9] border border-slate-200 rounded-xl p-6 space-y-3"
+                  className="bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl p-6 space-y-3"
                 >
-                  <Icon className="w-6 h-6 text-[#0A192F]" aria-hidden="true" />
-                  <h3 className="text-lg font-semibold text-[#0A192F]">
+                  <Icon className="w-6 h-6 text-[#B45309]" aria-hidden="true" />
+                  <h3 className="text-lg font-semibold text-[#1F1A14]">
                     {val.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-[#574E42] leading-relaxed">
                     {val.description}
                   </p>
                 </div>

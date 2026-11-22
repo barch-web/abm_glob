@@ -116,7 +116,6 @@ function EnquireFormContent() {
       setSubmittedEnquiry(created);
       setWhatsappUrl(waHref);
 
-      // Automatically trigger WhatsApp handoff in a new tab via anchor element
       const anchor = document.createElement('a');
       anchor.href = waHref;
       anchor.target = '_blank';
@@ -131,47 +130,47 @@ function EnquireFormContent() {
 
   if (submittedEnquiry) {
     return (
-      <div className="bg-[#F4F6F9] border border-slate-200 rounded-xl p-6 sm:p-10 space-y-6">
+      <div className="bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl p-6 sm:p-10 space-y-6">
         <div className="flex items-start gap-3">
-          <CheckCircle2 className="w-8 h-8 text-[#059669] shrink-0 mt-0.5" />
+          <CheckCircle2 className="w-8 h-8 text-[#B45309] shrink-0 mt-0.5" />
           <div>
-            <p className="text-xs font-semibold text-[#059669]">
+            <p className="text-xs font-semibold text-[#92400E]">
               Enquiry Saved & Formatted for WhatsApp
             </p>
-            <h2 className="text-2xl font-bold text-[#0A192F] mt-1">
+            <h2 className="text-2xl font-bold text-[#1F1A14] mt-1">
               Thank You — Your Quote Request Is Ready
             </h2>
-            <p className="text-sm text-slate-600 mt-1">
-              Your enquiry has been recorded in our system. If WhatsApp did not open automatically due to browser popup rules, click the green button below to send your pre-filled details immediately.
+            <p className="text-sm text-[#574E42] mt-1">
+              Your enquiry has been recorded in our system. If WhatsApp did not open automatically due to browser popup rules, click the button below to send your pre-filled details immediately.
             </p>
           </div>
         </div>
 
-        <div className="bg-white border border-slate-200 rounded-xl p-5 space-y-3 text-sm">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <span className="text-slate-500">Reference ID</span>
-            <span className="font-mono-tabular font-semibold text-[#0A192F]">
+        <div className="bg-white border border-[#E2DAC8] rounded-xl p-5 space-y-3 text-sm">
+          <div className="flex items-center justify-between border-b border-[#F0EAE0] pb-3">
+            <span className="text-[#6B5F51]">Reference ID</span>
+            <span className="font-mono-tabular font-semibold text-[#1F1A14]">
               {submittedEnquiry.referenceId}
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <p className="text-xs text-slate-500">Client / Organization</p>
-              <p className="font-semibold text-[#0A192F]">{submittedEnquiry.name}</p>
+              <p className="text-xs text-[#6B5F51]">Client / Organization</p>
+              <p className="font-semibold text-[#1F1A14]">{submittedEnquiry.name}</p>
             </div>
             <div>
-              <p className="text-xs text-slate-500">Selected Service</p>
-              <p className="font-semibold text-[#0A192F]">{submittedEnquiry.serviceName}</p>
+              <p className="text-xs text-[#6B5F51]">Selected Service</p>
+              <p className="font-semibold text-[#1F1A14]">{submittedEnquiry.serviceName}</p>
             </div>
             <div>
-              <p className="text-xs text-slate-500">Target Timeline</p>
-              <p className="font-medium text-[#0A192F] tabular-nums">
+              <p className="text-xs text-[#6B5F51]">Target Timeline</p>
+              <p className="font-medium text-[#1F1A14] tabular-nums">
                 {submittedEnquiry.expectedStartDate} → {submittedEnquiry.expectedEndDate}
               </p>
             </div>
             <div>
-              <p className="text-xs text-slate-500">Location & Contact</p>
-              <p className="font-medium text-[#0A192F]">
+              <p className="text-xs text-[#6B5F51]">Location & Contact</p>
+              <p className="font-medium text-[#1F1A14]">
                 {submittedEnquiry.location} · {submittedEnquiry.phone}
               </p>
             </div>
@@ -183,7 +182,7 @@ function EnquireFormContent() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#059669] hover:bg-[#047857] text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
           >
             <MessageCircle className="w-4 h-4" aria-hidden="true" />
             <span>Open WhatsApp With Pre-Filled Enquiry</span>
@@ -197,7 +196,7 @@ function EnquireFormContent() {
               setSpecificDetails('');
               setAdditionalMessage('');
             }}
-            className="px-5 py-3.5 rounded-lg border border-slate-300 hover:border-[#0A192F] text-sm font-semibold text-[#0A192F] transition-colors"
+            className="px-5 py-3.5 rounded-lg bg-white border border-[#D5CBB4] hover:border-[#B45309] text-sm font-semibold text-[#1F1A14] transition-colors"
           >
             Submit Another Enquiry
           </button>
@@ -210,13 +209,13 @@ function EnquireFormContent() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="bg-[#F4F6F9] border border-slate-200 rounded-xl p-6 sm:p-8 space-y-6"
+      className="bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl p-6 sm:p-8 space-y-6"
     >
       <div className="space-y-1">
-        <h2 className="text-xl sm:text-2xl font-bold text-[#0A192F]">
+        <h2 className="text-xl sm:text-2xl font-bold text-[#1F1A14]">
           Online Business Enquiry & Quote Form
         </h2>
-        <p className="text-sm text-slate-600">
+        <p className="text-sm text-[#574E42]">
           Complete all required fields below. Submitting saves your request and routes a pre-filled summary straight to our Accra WhatsApp desk.
         </p>
       </div>
@@ -225,7 +224,7 @@ function EnquireFormContent() {
         <div>
           <label
             htmlFor="enq-name"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Individual / Group / Organization Name *
           </label>
@@ -235,7 +234,7 @@ function EnquireFormContent() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="e.g. Apex Builders Ghana Ltd"
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           {errors.name && <p className="mt-1 text-xs text-red-600">{errors.name}</p>}
         </div>
@@ -243,7 +242,7 @@ function EnquireFormContent() {
         <div>
           <label
             htmlFor="enq-service"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Service / Solution / Product Name *
           </label>
@@ -251,7 +250,7 @@ function EnquireFormContent() {
             id="enq-service"
             value={serviceName}
             onChange={(e) => setSelectedService(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           >
             {serviceOptions.map((opt) => (
               <option key={opt} value={opt}>
@@ -267,7 +266,7 @@ function EnquireFormContent() {
         <div>
           <label
             htmlFor="enq-start"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Expected Start Date *
           </label>
@@ -276,7 +275,7 @@ function EnquireFormContent() {
             type="date"
             value={expectedStartDate}
             onChange={(e) => setExpectedStartDate(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           {errors.expectedStartDate && (
             <p className="mt-1 text-xs text-red-600">{errors.expectedStartDate}</p>
@@ -286,7 +285,7 @@ function EnquireFormContent() {
         <div>
           <label
             htmlFor="enq-end"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Expected End Date *
           </label>
@@ -295,7 +294,7 @@ function EnquireFormContent() {
             type="date"
             value={expectedEndDate}
             onChange={(e) => setExpectedEndDate(e.target.value)}
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           {errors.expectedEndDate && (
             <p className="mt-1 text-xs text-red-600">{errors.expectedEndDate}</p>
@@ -305,7 +304,7 @@ function EnquireFormContent() {
         <div>
           <label
             htmlFor="enq-phone"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Contact Phone Number *
           </label>
@@ -315,7 +314,7 @@ function EnquireFormContent() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="e.g. 0594607188"
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           {errors.phone && <p className="mt-1 text-xs text-red-600">{errors.phone}</p>}
         </div>
@@ -323,7 +322,7 @@ function EnquireFormContent() {
         <div>
           <label
             htmlFor="enq-email"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Email Address *
           </label>
@@ -333,7 +332,7 @@ function EnquireFormContent() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="e.g. procurement@company.com"
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
         </div>
@@ -341,7 +340,7 @@ function EnquireFormContent() {
         <div className="sm:col-span-2">
           <label
             htmlFor="enq-location"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Location (City / Area) *
           </label>
@@ -351,7 +350,7 @@ function EnquireFormContent() {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             placeholder="e.g. East Legon, Accra or Community 6, Tema"
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           {errors.location && (
             <p className="mt-1 text-xs text-red-600">{errors.location}</p>
@@ -361,7 +360,7 @@ function EnquireFormContent() {
         <div className="sm:col-span-2">
           <label
             htmlFor="enq-details"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Specific Service Details *
           </label>
@@ -371,7 +370,7 @@ function EnquireFormContent() {
             value={specificDetails}
             onChange={(e) => setSpecificDetails(e.target.value)}
             placeholder="Specify number of participants, network ports, CCTV cameras, hardware models, or audit scope..."
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
           {errors.specificDetails && (
             <p className="mt-1 text-xs text-red-600">{errors.specificDetails}</p>
@@ -381,7 +380,7 @@ function EnquireFormContent() {
         <div className="sm:col-span-2">
           <label
             htmlFor="enq-message"
-            className="block text-xs font-semibold text-[#0A192F] mb-1.5"
+            className="block text-xs font-semibold text-[#1F1A14] mb-1.5"
           >
             Additional Message (Optional)
           </label>
@@ -391,7 +390,7 @@ function EnquireFormContent() {
             value={additionalMessage}
             onChange={(e) => setAdditionalMessage(e.target.value)}
             placeholder="Any preferred inspection times, budget guidelines, or special access notes..."
-            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-slate-300 text-sm text-[#0A192F] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
+            className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-[#D5CBB4] text-sm text-[#1F1A14] focus:outline-none focus:ring-2 focus:ring-[#F59E0B]"
           />
         </div>
       </div>
@@ -399,7 +398,7 @@ function EnquireFormContent() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] disabled:opacity-60 text-[#0A192F] font-semibold text-sm px-7 py-3.5 rounded-lg transition-colors"
+        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] disabled:opacity-60 text-[#1F1A14] font-semibold text-sm px-7 py-3.5 rounded-lg transition-colors"
       >
         <Send className="w-4 h-4" aria-hidden="true" />
         <span>
@@ -413,16 +412,16 @@ function EnquireFormContent() {
 export default function EnquirePage() {
   return (
     <div className="bg-white min-h-screen">
-      <section className="bg-[#0A192F] text-white py-14 lg:py-16">
+      <section className="bg-[#F3EFE6] text-[#1F1A14] py-14 lg:py-16 border-b border-[#E2DAC8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
-            <p className="text-xs sm:text-sm font-semibold text-[#F59E0B]">
+            <p className="text-xs sm:text-sm font-semibold text-[#92400E]">
               Request a Technical Quotation
             </p>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#1F1A14]">
               Enquire or Get a Custom Service Quote
             </h1>
-            <p className="text-base text-slate-300 leading-relaxed">
+            <p className="text-base text-[#574E42] leading-relaxed">
               Submit your project, training, or procurement specifications below for immediate confirmation and direct WhatsApp coordination with our Accra engineering desk.
             </p>
           </div>
@@ -433,7 +432,7 @@ export default function EnquirePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Suspense
             fallback={
-              <div className="bg-[#F4F6F9] border border-slate-200 rounded-xl p-8 text-sm text-slate-600">
+              <div className="bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl p-8 text-sm text-[#574E42]">
                 Loading enquiry form...
               </div>
             }

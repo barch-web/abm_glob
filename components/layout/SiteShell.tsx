@@ -11,11 +11,11 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const isAdmin = pathname.startsWith('/admin');
 
   if (isAdmin) {
-    return <div className="min-h-screen bg-[#F4F6F9] text-[#0A192F]">{children}</div>;
+    return <div className="min-h-screen bg-[#FAF8F3] text-[#1F1A14]">{children}</div>;
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#0A192F]">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F3] text-[#1F1A14]">
       <SiteHeader />
       <main className="flex-1">{children}</main>
       <SiteFooter />

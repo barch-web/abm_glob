@@ -75,7 +75,7 @@ export function SettingsBackupTab() {
       if (res.ok) {
         setBackupStatus({
           ok: true,
-          msg: 'CMS backup imported and restored across IndexedDB.',
+          msg: 'CMS backup imported and restored.',
         });
       } else {
         setBackupStatus({
@@ -101,21 +101,21 @@ export function SettingsBackupTab() {
       {/* Change Password */}
       <form
         onSubmit={handlePasswordChange}
-        className="bg-white border border-slate-200 rounded-xl p-6 space-y-4 max-w-2xl"
+        className="bg-white border border-[#E2DAC8] rounded-xl p-6 space-y-4 max-w-2xl"
       >
         <div className="flex items-center gap-2">
-          <KeyRound className="w-5 h-5 text-[#D97706]" aria-hidden="true" />
-          <h2 className="text-base font-bold text-[#0A192F]">
+          <KeyRound className="w-5 h-5 text-[#B45309]" aria-hidden="true" />
+          <h2 className="text-base font-bold text-[#1F1A14]">
             Change Admin Password
           </h2>
         </div>
-        <p className="text-xs text-slate-600">
+        <p className="text-xs text-[#574E42]">
           Passwords are hashed client-side using Web Crypto SHA-256 before persistence. Plain-text credentials are never stored.
         </p>
 
         <div className="space-y-3">
           <div>
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1">
               Current Password
             </label>
             <input
@@ -123,11 +123,11 @@ export function SettingsBackupTab() {
               value={currentPw}
               onChange={(e) => setCurrentPw(e.target.value)}
               required
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14]"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1">
               New Password (minimum 8 characters)
             </label>
             <input
@@ -135,11 +135,11 @@ export function SettingsBackupTab() {
               value={newPw}
               onChange={(e) => setNewPw(e.target.value)}
               required
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14]"
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-[#0A192F] mb-1">
+            <label className="block text-xs font-semibold text-[#1F1A14] mb-1">
               Confirm New Password
             </label>
             <input
@@ -147,7 +147,7 @@ export function SettingsBackupTab() {
               value={confirmPw}
               onChange={(e) => setConfirmPw(e.target.value)}
               required
-              className="w-full px-3.5 py-2.5 rounded-lg bg-[#F4F6F9] border border-slate-300 text-sm text-[#0A192F]"
+              className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF8F3] border border-[#D5CBB4] text-sm text-[#1F1A14]"
             />
           </div>
         </div>
@@ -155,7 +155,7 @@ export function SettingsBackupTab() {
         {pwStatus && (
           <p
             className={`text-xs font-semibold ${
-              pwStatus.ok ? 'text-[#047857]' : 'text-red-600'
+              pwStatus.ok ? 'text-[#92400E]' : 'text-red-600'
             }`}
           >
             {pwStatus.msg}
@@ -164,18 +164,18 @@ export function SettingsBackupTab() {
 
         <button
           type="submit"
-          className="inline-flex items-center gap-2 bg-[#0A192F] hover:bg-[#112240] text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-lg transition-colors"
+          className="inline-flex items-center gap-2 bg-[#231D15] hover:bg-[#3A3022] text-[#FAF8F3] font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-lg transition-colors"
         >
           Update Admin Password
         </button>
       </form>
 
       {/* JSON Export / Import */}
-      <div className="bg-white border border-slate-200 rounded-xl p-6 space-y-4 max-w-2xl">
-        <h2 className="text-base font-bold text-[#0A192F]">
+      <div className="bg-white border border-[#E2DAC8] rounded-xl p-6 space-y-4 max-w-2xl">
+        <h2 className="text-base font-bold text-[#1F1A14]">
           JSON Backup & Portability
         </h2>
-        <p className="text-xs text-slate-600 leading-relaxed">
+        <p className="text-xs text-[#574E42] leading-relaxed">
           Export your entire ABM Global Ltd CMS—including uploaded Base64 gallery photos, custom services, announcements, enquiries, and consultation bookings—to a portable JSON file, or restore from a previous backup.
         </p>
 
@@ -183,13 +183,13 @@ export function SettingsBackupTab() {
           <button
             type="button"
             onClick={handleExport}
-            className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#0A192F] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-[#F59E0B] hover:bg-[#D97706] text-[#1F1A14] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors"
           >
             <Download className="w-4 h-4" aria-hidden="true" />
             <span>Export JSON Backup</span>
           </button>
 
-          <label className="inline-flex items-center gap-2 border border-slate-300 hover:border-[#0A192F] bg-white text-[#0A192F] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg cursor-pointer transition-colors">
+          <label className="inline-flex items-center gap-2 border border-[#D5CBB4] hover:border-[#B45309] bg-white text-[#1F1A14] font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg cursor-pointer transition-colors">
             <Upload className="w-4 h-4" aria-hidden="true" />
             <span>Import JSON Backup</span>
             <input
@@ -204,14 +204,14 @@ export function SettingsBackupTab() {
         {backupStatus && (
           <p
             className={`text-xs font-semibold ${
-              backupStatus.ok ? 'text-[#047857]' : 'text-red-600'
+              backupStatus.ok ? 'text-[#92400E]' : 'text-red-600'
             }`}
           >
             {backupStatus.msg}
           </p>
         )}
 
-        <div className="pt-4 border-t border-slate-100">
+        <div className="pt-4 border-t border-[#F0EAE0]">
           {!confirmReset ? (
             <button
               type="button"
@@ -236,7 +236,7 @@ export function SettingsBackupTab() {
               <button
                 type="button"
                 onClick={() => setConfirmReset(false)}
-                className="px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-semibold text-slate-700"
+                className="px-3 py-1.5 rounded-lg border border-[#D5CBB4] text-xs font-semibold text-[#574E42]"
               >
                 Cancel
               </button>
