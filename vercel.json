@@ -1,0 +1,9 @@
+{
+  "framework": "nextjs",
+  "rewrites": [
+    {
+      "source": "/((?!_next/|api/|images/|about|services|gallery|book-consultation|enquire|updates|admin|favicon\\.ico).*)",
+      "destination": "/"
+    }
+  ]
+}
