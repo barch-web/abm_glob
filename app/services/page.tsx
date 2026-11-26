@@ -155,7 +155,7 @@ export default function ServicesPage() {
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors whitespace-nowrap"
+                      className="inline-flex items-center gap-2 bg-[#047857] hover:bg-[#065F46] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors whitespace-nowrap"
                     >
                       <MessageCircle className="w-4 h-4" aria-hidden="true" />
                       <span>Chat on WhatsApp</span>

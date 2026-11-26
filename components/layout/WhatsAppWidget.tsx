@@ -47,17 +47,17 @@ export function WhatsAppWidget() {
     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(greeting)}`;
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-3">
       {open && (
         <div
           role="dialog"
           aria-label="WhatsApp Topic Selector"
-          className="w-80 max-w-[calc(100vw-2.5rem)] bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl shadow-xl overflow-hidden"
+          className="w-80 max-w-[calc(100vw-2rem)] bg-[#FAF8F3] border border-[#E2DAC8] rounded-xl shadow-xl overflow-hidden"
         >
-          <div className="bg-[#231D15] text-[#FAF8F3] px-4 py-3.5 flex items-center justify-between gap-3">
+          <div className="bg-[#065F46] text-white px-4 py-3.5 flex items-center justify-between gap-3">
             <div>
               <p className="text-sm font-semibold">Chat on WhatsApp</p>
-              <p className="text-xs text-[#FBBF24]">
+              <p className="text-xs text-[#A7F3D0]">
                 Select a topic to message {state.content.phoneDisplay}
               </p>
             </div>
@@ -65,7 +65,7 @@ export function WhatsAppWidget() {
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close WhatsApp menu"
-              className="p-1.5 rounded-lg text-[#D8D0C2] hover:text-white hover:bg-white/10 transition-colors"
+              className="p-1.5 rounded-lg text-[#D1FAE5] hover:text-white hover:bg-white/10 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -82,7 +82,7 @@ export function WhatsAppWidget() {
                 className="flex items-center justify-between gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-[#1F1A14] hover:bg-[#F3EFE6] transition-colors"
               >
                 <span>{topic.label}</span>
-                <ChevronRight className="w-4 h-4 text-[#B45309] shrink-0" aria-hidden="true" />
+                <ChevronRight className="w-4 h-4 text-[#047857] shrink-0" aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -94,9 +94,10 @@ export function WhatsAppWidget() {
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
         aria-label="Open WhatsApp support topics"
-        className="inline-flex items-center gap-2.5 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-sm px-4 py-3 rounded-full shadow-lg border border-[#FBBF24]/50 transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F1A14] whitespace-nowrap"
+        className="inline-flex items-center gap-2.5 bg-[#047857] hover:bg-[#065F46] text-white font-semibold text-sm px-5 py-3 rounded-full shadow-lg border border-[#34D399]/60 transition-transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1F1A14] whitespace-nowrap"
       >
-        <MessageCircle className="w-5 h-5 shrink-0 text-[#FDE68A]" aria-hidden="true" />
+        <MessageCircle className="w-5 h-5 shrink-0 text-[#ECFDF5]" aria-hidden="true" />
+        <span className="sm:hidden">WhatsApp</span>
         <span className="hidden sm:inline">WhatsApp Support</span>
       </button>
     </div>

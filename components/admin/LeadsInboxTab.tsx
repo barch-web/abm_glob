@@ -230,7 +230,7 @@ export function LeadsInboxTab() {
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#B45309] hover:bg-[#92400E] text-white text-xs font-semibold transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#047857] hover:bg-[#065F46] text-white text-xs font-semibold transition-colors"
                       >
                         <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>Reply</span>
@@ -349,7 +349,7 @@ export function LeadsInboxTab() {
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#B45309] hover:bg-[#92400E] text-white text-xs font-semibold transition-colors"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#047857] hover:bg-[#065F46] text-white text-xs font-semibold transition-colors"
                       >
                         <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                         <span>WhatsApp</span>

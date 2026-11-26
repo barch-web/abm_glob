@@ -252,7 +252,7 @@ export function HomeView() {
                       href={waUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors whitespace-nowrap"
+                      className="inline-flex items-center justify-center gap-1.5 bg-[#047857] hover:bg-[#065F46] text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg transition-colors whitespace-nowrap"
                     >
                       <MessageCircle className="w-3.5 h-3.5" aria-hidden="true" />
                       <span>WhatsApp</span>

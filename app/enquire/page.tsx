@@ -182,7 +182,7 @@ function EnquireFormContent() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#B45309] hover:bg-[#92400E] text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-[#047857] hover:bg-[#065F46] text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-colors whitespace-nowrap"
           >
             <MessageCircle className="w-4 h-4" aria-hidden="true" />
             <span>Open WhatsApp With Pre-Filled Enquiry</span>
